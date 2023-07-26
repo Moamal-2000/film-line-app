@@ -1,0 +1,98 @@
+main .website-introduction {
+  background-image: url('../../assets/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding-top: 230px;
+}
+
+main .website-introduction .website-name {
+  color: var(--yellow);
+  font-size: 26px;
+}
+
+main .website-introduction h2 {
+  color: var(--white);
+  font-size: 57px;
+  width: 600px;
+  margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+  main .website-introduction h2 {
+    width: 450px;
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  main .website-introduction h2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 376px) {
+  main .website-introduction h2 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+}
+
+main .website-introduction h2 span {
+  color: var(--yellow);
+}
+
+main .website-introduction .box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--white);
+  margin: 30px 0;
+}
+
+main .website-introduction .box .pg {
+  border: solid 2px var(--white);
+  background-color: var(--white);
+  color: var(--black);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+}
+
+main .website-introduction .box .resolution {
+  border: solid 2px var(--white);
+  background-color: transparent;
+  color: var(--white);
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 10px;
+}
+
+main .website-introduction .box .content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #dadada;
+}
+
+@media (max-width: 768px) {
+  main .website-introduction .box .content {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+main .website-introduction .box .content div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+main .website-introduction button {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
