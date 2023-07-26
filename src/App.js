@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
-import "./App.css";
+import API from "./API/movies.json";
+import styles from "./App.module.scss";
 import Header from "./Components/Header/Header";
 import Main from "./Components/Main/Main";
-import API from "./movies.json";
 
 const MoviesContext = createContext();
 
@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <MoviesContext.Provider value={moviesContextValue}>
         <Header />
         <Main />

@@ -1,22 +1,22 @@
 import React from "react";
 import { useMoviesContext } from "../../App";
-import "./Tools.css";
+import styles from "./Tools.module.scss";
 
 const Tools = ({ isOverlayActive, setIsOverlayActive }) => {
   const movieContext = useMoviesContext();
 
   return (
-    <div className="tools">
-      <div className="search-input-container">
-        <input type="text" className="search-input" />
+    <div className={styles.tools}>
+      <div className={styles.searchInputContainer}>
+        <input type="text" className={styles.searchInput} />
         <i className="fa-solid fa-magnifying-glass"></i>
       </div>
 
-      <div className="select-lang">
+      <div className={styles.selectLang}>
         <i className="bi bi-globe2 global"></i>
-        <span className="selected-lang">EN</span>
+        <span className={styles.selectedLang}>EN</span>
         <i className="fa-solid fa-angle-down"></i>
-        <nav className="languages">
+        <nav className={styles.languages}>
           <ul>
             <li>
               <a href="/#">EN</a>
@@ -37,7 +37,9 @@ const Tools = ({ isOverlayActive, setIsOverlayActive }) => {
         </nav>
       </div>
 
-      <button className="sign-in-button button-effect">Sign in</button>
+      <button className={`${styles.signInButton} ${styles.buttonEffect}`}>
+        Sign in
+      </button>
       <i
         className="fa-solid fa-bars mobile-nav-icon"
         onClick={() => {

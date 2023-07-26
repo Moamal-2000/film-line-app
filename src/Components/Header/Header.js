@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Header.css";
+import styles from "./Header.module.scss";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import Tools from "./Tools";
@@ -20,7 +20,7 @@ const Header = () => {
     <header ref={header}>
       <div className="container">
         <div
-          className={`overlay ${isOverlayActive ? "active" : ""}`}
+          className={`${styles.overlay} ${isOverlayActive ? `${styles.active}` : ""}`}
           onClick={() => {
             setIsOverlayActive(false);
             document.body.classList.remove("overflow");

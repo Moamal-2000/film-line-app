@@ -1,7 +1,7 @@
-import React from 'react'
-import "./Main.css"
-import Introduction from './Introduction'
-import UpcomingMovies from './UpcomingMovies'
+import React from "react";
+import Introduction from "./Introduction";
+import styles from "./Main.module.scss";
+import UpcomingMovies from "./UpcomingMovies";
 
 const Main = () => {
   return (
@@ -9,7 +9,7 @@ const Main = () => {
       <Introduction />
       <UpcomingMovies />
     </main>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;

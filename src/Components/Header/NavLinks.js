@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LogoImg from "../../assets/logo.svg";
-import "./NavLinks.css";
+import styles from "./NavLinks.module.scss";
 
 const NavLinks = ({ isOverlayActive, setIsOverlayActive }) => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -12,10 +12,10 @@ const NavLinks = ({ isOverlayActive, setIsOverlayActive }) => {
   }, []);
 
   return (
-    <nav className={`links ${isOverlayActive && "active"}`}>
+    <nav className={`${styles.links} ${isOverlayActive && `${styles.active}`}`}>
       {screenWidth <= 1200 && (
-        <div className="logo-container">
-          <div className="logo">
+        <div className={styles.logoContainer}>
+          <div className={styles.logo}>
             <a href="index.html">
               <img src={LogoImg} alt="" />
             </a>
@@ -47,7 +47,7 @@ const NavLinks = ({ isOverlayActive, setIsOverlayActive }) => {
         </li>
       </ul>
       {screenWidth <= 1200 && (
-        <div className="social-media">
+        <div className={styles.socialMedia}>
           <a href="/#">
             <i className="fa-brands fa-twitter"></i>
           </a>

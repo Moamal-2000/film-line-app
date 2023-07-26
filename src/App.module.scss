@@ -1,17 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  height: 1000vh;
-  overflow-x: hidden;
-}
-
-body.overflow {
+.overflow {
   overflow: hidden;
 }
 
@@ -35,38 +22,6 @@ body.overflow {
 .overlay.active {
   visibility: visible;
   opacity: 1;
-}
-
-:root {
-  --white: #fff;
-  --yellow: #e2d703;
-  --black: #252525;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%;
-  height: 100%;
-}
-
-.container {
-  width: 86%;
-  margin: 0 auto;
-}
-
-@media (max-width: 378px) {
-  .container {
-    width: 90%;
-  }
 }
 
 .button-effect {

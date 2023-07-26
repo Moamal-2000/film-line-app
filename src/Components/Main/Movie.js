@@ -1,27 +1,27 @@
 import React from "react";
-import "./Movie.css";
+import styles from "./Movie.module.scss";
 
-const Movie = ({movie}) => {
+const Movie = ({ movie }) => {
   return (
-    <li className="movie">
-      <div className="img">
+    <li className={styles.movie}>
+      <div className={styles.img}>
         <img src={movie.Poster} alt="" />
       </div>
 
-      <div className="info">
+      <div className={styles.info}>
         <div>
-          <h4 className="name-movie">{movie.Title}</h4>
-          <span className="release-year">{movie.Year}</span>
+          <h4 className={styles.nameMovie}>{movie.Title}</h4>
+          <span className={styles.releaseYear}>{movie.Year}</span>
         </div>
 
         <div>
-          <span className="resolution">{movie.Reslution}</span>
-          <div className="time-and-rate">
-            <span className="time">
+          <span className={styles.resolution}>{movie.Reslution}</span>
+          <div className={styles.timeAndRate}>
+            <span className={styles.time}>
               <i className="fa-regular fa-clock"></i>
               {movie.Runtime}
             </span>
-            <span className="rate">
+            <span className={styles.rate}>
               <i className="bi bi-star-fill"></i>
               {movie.imdbRating}
             </span>

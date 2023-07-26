@@ -1,0 +1,50 @@
+@import "./Sass/mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  height: 1000vh;
+  overflow-x: hidden;
+}
+
+:root {
+  --white: #fff;
+  --yellow: #e2d703;
+  --black: #252525;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  @include fullSize;
+}
+
+
+
+.container {
+  width: 86%;
+  margin: 0 auto;
+}
+
+@media (max-width: 378px) {
+  .container {
+    width: 90%;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useMoviesContext } from "../../App";
 import Movie from "./Movie";
-import "./UpcomingMovies.css";
+import styles from "./UpcomingMovies.module.scss";
 
 const UpcomingMovies = () => {
   const movies = useMoviesContext().movies;
@@ -12,26 +12,28 @@ const UpcomingMovies = () => {
 
     filters.forEach((button) => {
       button.addEventListener("click", () => {
-        filters.forEach(button => button.classList.remove('active'))
-        button.classList.add('active')
+        filters.forEach((button) => button.classList.remove("active"));
+        button.classList.add("active");
       });
     });
   }, []);
 
   return (
-    <section className="upcoming-movies">
-      <div className="movies-container">
+    <section className={styles.upcomingMovies}>
+      <div className={styles.moviesContainer}>
         <h2>ONLINE STREAMING</h2>
-        <div className="filters-container">
+        <div className={styles.filtersContainer}>
           <h3>Upcoming Movies</h3>
-          <div className="filters" ref={filtersContainer}>
-            <button className="active" type="button">Movies</button>
+          <div className={styles.filters} ref={filtersContainer}>
+            <button className={styles.active} type="button">
+              Movies
+            </button>
             <button type="button">TV Shows</button>
             <button type="button">Anime</button>
           </div>
         </div>
 
-        <ul className="movies-list">
+        <ul className={styles.moviesList}>
           {movies.map(
             (movie, i) => i < 4 && <Movie movie={movie} key={movie.imdbID} />
           )}
