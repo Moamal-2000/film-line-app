@@ -1,9 +1,11 @@
 import React from "react";
-import { useMoviesContext } from "../../App";
+import { useMoviesContext } from "../../Contexts/MoviesContext";
+import { useOverlayData } from "../../Contexts/OverlayContext";
 import styles from "./Tools.module.scss";
 
-const Tools = ({ isOverlayActive, setIsOverlayActive }) => {
-  const movieContext = useMoviesContext();
+const Tools = () => {
+  const { isOverlayActive, setIsOverlayActive } = useOverlayData();
+  const movies = useMoviesContext();
 
   return (
     <div className={styles.tools}>
@@ -13,7 +15,7 @@ const Tools = ({ isOverlayActive, setIsOverlayActive }) => {
       </div>
 
       <div className={styles.selectLang}>
-        <i className="bi bi-globe2 global"></i>
+        <i className={`bi bi-globe2 ${styles.global}`}></i>
         <span className={styles.selectedLang}>EN</span>
         <i className="fa-solid fa-angle-down"></i>
         <nav className={styles.languages}>

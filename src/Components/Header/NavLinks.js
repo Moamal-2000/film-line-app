@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LogoImg from "../../assets/logo.svg";
 import styles from "./NavLinks.module.scss";
+import { useOverlayData } from "../../Contexts/OverlayContext";
 
-const NavLinks = ({ isOverlayActive, setIsOverlayActive }) => {
+const NavLinks = () => {
+  const {isOverlayActive, setIsOverlayActive} = useOverlayData()
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -12,7 +14,7 @@ const NavLinks = ({ isOverlayActive, setIsOverlayActive }) => {
   }, []);
 
   return (
-    <nav className={`${styles.links} ${isOverlayActive && `${styles.active}`}`}>
+    <nav className={`${styles.links} ${isOverlayActive ? `${styles.active}` : ""}`}>
       {screenWidth <= 1200 && (
         <div className={styles.logoContainer}>
           <div className={styles.logo}>

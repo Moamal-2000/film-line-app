@@ -36,8 +36,6 @@ img {
   @include fullSize;
 }
 
-
-
 .container {
   width: 86%;
   margin: 0 auto;
@@ -47,4 +45,29 @@ img {
   .container {
     width: 90%;
   }
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.buttonEffect {
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: bold;
+  user-select: none;
+  cursor: pointer;
+  padding: 10px 44px;
+  border-radius: 50px;
+  border: solid 2px var(--yellow);
+  @include prefix(border-radius, 50px);
+  @include prefix(transition, (color 0.3s, background-color 0.3s));
+}
+
+
+.button-effect:hover {
+  color: var(--black);
+  background-color: var(--yellow);
 }

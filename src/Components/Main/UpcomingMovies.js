@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { useMoviesContext } from "../../App";
+import { useMoviesContext } from "../../Contexts/MoviesContext";
 import Movie from "./Movie";
 import styles from "./UpcomingMovies.module.scss";
 
 const UpcomingMovies = () => {
-  const movies = useMoviesContext().movies;
+  const movies = useMoviesContext();
   const filtersContainer = useRef();
 
   useEffect(() => {

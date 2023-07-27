@@ -1,22 +1,24 @@
-header .tools {
+@import "../../Sass/mixins";
+
+.tools {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 @media (max-width: 768px) {
-  header .tools *:not(.mobile-nav-icon) {
+  .tools *:not(.mobileNavIcon) {
     display: none;
   }
 }
 
-header .tools .search-input-container {
+.tools .searchInputContainer {
   position: relative;
-  /* width: 200px; */
+  // width: 200px; 
   margin-right: 20px;
 }
 
-header .tools .search-input-container .search-input {
+.searchInput {
   background-color: transparent;
   border: none;
   outline: none;
@@ -26,59 +28,45 @@ header .tools .search-input-container .search-input {
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  @include prefix(transform, translateY(-50%));
   visibility: hidden;
 }
 
-header .tools .search-input-container i {
+.searchInputContainer i {
   color: var(--white);
   user-select: none;
   cursor: pointer;
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transition: opacity 0.3s;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
+  @include prefix(transform, translateY(-50%));
+  @include prefix(transition, opacity .3s);
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
-header .tools .search-input-container i:hover {
-  opacity: 0.7;
-}
-
-header .tools .select-lang {
+.selectLang {
+  color: var(--white);
+  font-weight: bold;
   user-select: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
   position: relative;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
+  @include prefix(transition, .3s);
 }
 
-header .tools .select-lang .global {
+.global {
   color: var(--yellow);
   user-select: none;
   font-size: 18px;
   position: relative;
 }
 
-header .tools .select-lang .global::after {
+.global::after {
   content: '';
   position: absolute;
   left: -16px;
@@ -88,55 +76,37 @@ header .tools .select-lang .global::after {
   background-color: #2a2d31;
 }
 
-header .tools .select-lang .selected-lang {
-  color: var(--white);
-  font-weight: bold;
-}
-
-header .tools .select-lang i {
-  color: var(--white);
-  font-size: 10px;
-}
-
-header .tools .select-lang nav {
+.selectLang nav {
   position: absolute;
   left: -10px;
   top: 24px;
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.3s;
-  -webkit-transition: opacity 0.3s;
-  -moz-transition: opacity 0.3s;
-  -ms-transition: opacity 0.3s;
-  -o-transition: opacity 0.3s;
+  @include prefix(transition, opacity .3s);
 }
 
-header .tools .select-lang.active nav {
+.selectLang.active nav {
   visibility: visible;
   opacity: 1;
 }
 
-header .tools .select-lang nav ul li a {
+.selectLang nav ul li a {
   color: var(--white);
   font-weight: bold;
   font-size: 14px;
   padding: 0 10px;
-  transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
+  @include prefix(transition, color .3s);
+
+  &:hover {
+    color: var(--yellow);
+  }
 }
 
-header .tools .select-lang nav ul li a:hover {
-  color: var(--yellow);
-}
-
-header .tools .sign-in-button {
+.signInButton {
   margin-left: 20px;
 }
 
-header .tools .mobile-nav-icon {
+.mobileNavIcon {
   color: var(--white);
   font-size: 20px;
   user-select: none;
@@ -146,7 +116,7 @@ header .tools .mobile-nav-icon {
 }
 
 @media (max-width: 1200px) {
-  header .tools .mobile-nav-icon {
+  .mobileNavIcon {
     display: block;
   }
 }

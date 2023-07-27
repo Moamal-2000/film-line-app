@@ -1,5 +1,7 @@
+@import "../../Sass/_mixins.scss";
+
 @media (max-width: 1200px) {
-  header .links {
+  .links {
     position: fixed;
     top: 0;
     right: -300px;
@@ -8,70 +10,62 @@
     padding: 20px;
     box-shadow: 38px 0px 61px 11px #00000091;
     z-index: 3;
-    transition: right 0.7s;
-    -webkit-transition: right 0.7s;
-    -moz-transition: right 0.7s;
-    -ms-transition: right 0.7s;
-    -o-transition: right 0.7s;
-}
+    @include prefix(transition, right .7s);
 
-  header .links.active {
-    right: 0;
+    &.active {
+      right: 0;
+    }
   }
 }
 
-header .links .logo-container {
+.logoContainer {
   display: flex;
   align-items: center;
   gap: 50px;
   margin-bottom: 26px;
 }
 
-header .links .logo-container i {
+.logoContainer i {
   color: #fff;
   font-size: 26px;
   user-select: none;
   cursor: pointer;
   position: relative;
   top: 1px;
-  transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
+  @include prefix(transition, color .3s);
+
+  &:hover {
+    color: var(--yellow);
+  }
 }
 
-header .links .logo-container i:hover {
-  color: var(--yellow);
-}
-
-header .links ul {
+.links ul {
   display: flex;
   gap: 20px;
 }
 
 @media (max-width: 1200px) {
-  header .links ul {
+  .links ul {
     flex-direction: column;
     gap: 0;
   }
 }
 
-header .links ul li a {
+.links ul li a {
   color: var(--white);
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
   padding: 10px;
-  transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
+  @include prefix(transition, color .3s);
+
+  &:hover {
+    color: var(--yellow);
+  }
 }
 
 @media (max-width: 1200px) {
-  header .links ul li a {
+  .links ul li a {
     display: inline-block;
     font-weight: 500;
     text-transform: capitalize;
@@ -80,8 +74,8 @@ header .links ul li a {
     position: relative;
   }
 
-  header .links ul li a::before,
-  header .links ul li:last-child a:after {
+  .links ul li a::before,
+  .links ul li:last-child a::after {
     content: '';
     position: absolute;
     left: -20px;
@@ -90,17 +84,13 @@ header .links ul li a {
     border-top: solid 1px #393939;
   }
 
-  header .links ul li:last-child a:after {
+  .links ul li:last-child a::after {
     top: auto;
     bottom: 0;
   }
 }
 
-header .links ul li a:hover {
-  color: var(--yellow);
-}
-
-header nav .social-media {
+nav .socialMedia {
   display: flex;
   align-items: center;
   gap: 20px;
@@ -108,18 +98,14 @@ header nav .social-media {
   margin: 24px auto;
 }
 
-header nav .social-media i {
+nav .socialMedia i {
   color: var(--white);
   font-size: 18px;
   user-select: none;
   cursor: pointer;
-  transition: color 0.3s;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  -ms-transition: color 0.3s;
-  -o-transition: color 0.3s;
-}
+  @include prefix(transition, color .3s);
 
-header nav .social-media i:hover {
-  color: var(--yellow);
+  &:hover {
+    color: var(--yellow);
+  }
 }

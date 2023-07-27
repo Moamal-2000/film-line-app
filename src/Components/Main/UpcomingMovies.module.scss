@@ -1,28 +1,30 @@
-main .upcoming-movies {
+@import "../../Sass/mixins";
+
+main .upcomingMovies {
   background-image: url('../../assets/upcoming-bg.png');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 90px 0 120px 0;
 }
 
-main .upcoming-movies .movies-container {
+main .upcomingMovies .moviesContainer {
   width: 86%;
   margin: 0 auto;
 }
 
 /* @media (max-width: 1400px) {
-  main .upcoming-movies .movies-container {
+  main .upcomingMovies .moviesContainer {
     width: 96%;
   }
 } */
 
 /* @media (max-width: 378px) {
-  main .upcoming-movies .movies-container {
+  main .upcomingMovies .moviesContainer {
     width: 90%;
   }
 } */
 
-main .upcoming-movies h2 {
+main .upcomingMovies h2 {
   color: var(--yellow);
   font-size: 14px;
   font-weight: normal;
@@ -31,13 +33,13 @@ main .upcoming-movies h2 {
 }
 
 @media (max-width: 992px) {
-  main .upcoming-movies h2 {
+  main .upcomingMovies h2 {
     margin: 0 auto;
     margin-bottom: 8px;
   }
 }
 
-main .upcoming-movies .filters-container {
+main .upcomingMovies .filtersContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -45,38 +47,34 @@ main .upcoming-movies .filters-container {
 }
 
 @media (max-width: 992px) {
-  main .upcoming-movies .filters-container {
+  main .upcomingMovies .filtersContainer {
     flex-direction: column;
     gap: 20px;
   }
 }
 
-main .upcoming-movies .filters-container h3 {
+main .upcomingMovies .filtersContainer h3 {
   color: var(--white);
   font-size: 34px;
 }
 
-main .upcoming-movies .filters-container .filters {
+main .upcomingMovies .filtersContainer .filters {
   display: flex;
   gap: 10px;
 }
 
-main .upcoming-movies .filters-container .filters button {
+main .upcomingMovies .filtersContainer .filters button {
   color: #dadada;
   font-size: 12px;
   font-weight: bold;
   background-color: #21232b;
   border: solid 2px #2e303e;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  @include prefix(border-radius, 50px);
   padding: 12px 30px;
   user-select: none;
   cursor: pointer;
-}
 
-main .upcoming-movies .filters-container .filters button.active {
-  border-color: var(--yellow);
+  &.active {
+    border-color: var(--yellow);
+  }
 }
