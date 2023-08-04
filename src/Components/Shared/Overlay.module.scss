@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 1000;
   background-color: #171d21cc;
   @include prefix(transition, opacity 0.3s);
   visibility: hidden;
@@ -16,4 +16,5 @@
 .overlay.active {
   visibility: visible;
   opacity: 1;
+  z-index: 1000;
 }

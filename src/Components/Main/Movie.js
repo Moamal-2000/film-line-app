@@ -3,13 +3,13 @@ import styles from "./Movie.module.scss";
 
 const Movie = ({ movie }) => {
   return (
-    <li className={styles.movie}>
+    <div className={styles.movie}>
       <div className={styles.img}>
         <img src={movie.Poster} alt="" />
       </div>
 
       <div className={styles.info}>
-        <div>
+        <div className={styles.box}>
           <h4 className={styles.nameMovie}>{movie.Title}</h4>
           <span className={styles.releaseYear}>{movie.Year}</span>
         </div>
@@ -28,7 +28,7 @@ const Movie = ({ movie }) => {
           </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 

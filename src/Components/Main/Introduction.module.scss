@@ -86,7 +86,7 @@ main .websiteIntroduction .box .content {
   }
 }
 
-main .websiteIntroduction .box .content div {
+main .websiteIntroduction .box .content>div {
   display: flex;
   align-items: center;
   gap: 20px;

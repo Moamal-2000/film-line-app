@@ -1,5 +1,9 @@
 @import "../../Sass/_mixins.scss";
 
+.links {
+  z-index: 1005;
+}
+
 @media (max-width: 1200px) {
   .links {
     position: fixed;
@@ -9,7 +13,6 @@
     height: 100vh;
     padding: 20px;
     box-shadow: 38px 0px 61px 11px #00000091;
-    z-index: 3;
     @include prefix(transition, right .7s);
 
     &.active {

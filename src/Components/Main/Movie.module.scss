@@ -1,57 +1,6 @@
 @import "../../Sass/mixins";
 
-main .upcomingMovies .moviesList {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: inline mandatory;
-  gap: 30px;
-  padding-bottom: 25px;
-  width: fit-content;
-  margin: 0 auto;
-}
-
-@media (max-width: 1500px) {
-  main .upcomingMovies .moviesList {
-    width: 100%;
-  }
-}
-
-@media (max-width: 1200px) {
-  main .upcomingMovies .moviesList {
-    width: 98.5%;
-  }
-}
-
-@media (max-width: 992px) {
-  main .upcomingMovies .moviesList {
-    width: 79%;
-  }
-}
-
-@media (max-width: 768px) {
-  main .upcomingMovies .moviesList {
-    width: 100%;
-  }
-}
-
-main .upcomingMovies .moviesList::-webkit-scrollbar {
-  height: 8px;
-}
-
-main .upcomingMovies .moviesList::-webkit-scrollbar-track {
-  background-color: transparent;
-  box-shadow: 0 0 0 2px var(--yellow);
-  @include prefix(border-radius, 10px);
-}
-
-main .upcomingMovies .moviesList::-webkit-scrollbar-thumb {
-  background-color: #e3dede;
-  @include prefix(border-radius, 10px);
-  box-shadow: inset 0 -1px 0 var(--black),
-    inset 0 1px 0 var(--black);
-}
-
-main .upcomingMovies .moviesList .movie .img {
+.img {
   user-select: none;
   cursor: pointer;
   position: relative;
@@ -65,18 +14,18 @@ main .upcomingMovies .moviesList .movie .img {
 }
 
 @media (max-width: 1239px) {
-  main .upcomingMovies .moviesList .movie .img {
+  .img {
     width: 320px;
   }
 }
 
 @media (max-width: 376px) {
-  main .upcomingMovies .moviesList .movie .img {
+  .img {
     width: 338px;
   }
 }
 
-main .upcomingMovies .moviesList .movie .img::before {
+.img::before {
   content: '';
   position: absolute;
   left: 0;
@@ -87,33 +36,33 @@ main .upcomingMovies .moviesList .movie .img::before {
   @include prefix(transition, background-color .3s);
 }
 
-main .upcomingMovies .moviesList .movie .img:hover::before {
+.img:hover::before {
   background-color: rgba(255, 255, 255, 0.037);
 }
 
-main .upcomingMovies .moviesList .movie .info {
+.info {
   margin-top: 20px;
 }
 
-main .upcomingMovies .moviesList .movie .info div {
+.box {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-main .upcomingMovies .moviesList .movie .info .nameMovie {
+.nameMovie {
   color: var(--white);
   width: 200px;
   height: 60px;
 }
 
-main .upcomingMovies .moviesList .movie .info .releaseYear {
+.releaseYear {
   color: var(--yellow);
   font-size: 14px;
   font-weight: 500;
 }
 
-main .upcomingMovies .moviesList .movie .info .resolution {
+.resolution {
   color: var(--yellow);
   border: solid 2px var(--white);
   font-size: 12px;
@@ -121,21 +70,19 @@ main .upcomingMovies .moviesList .movie .info .resolution {
   padding: 1px 10px;
 }
 
-main .upcomingMovies .moviesList .movie .info .timeAndRate {
+.timeAndRate {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-main .upcomingMovies .moviesList .movie .info .timeAndRate .time,
-main .upcomingMovies .moviesList .movie .info .timeAndRate .rate {
+:is(.time, .rate) {
   color: #dadada;
   font-size: 12px;
   font-weight: 500;
 }
 
-main .upcomingMovies .moviesList .movie .info .timeAndRate .time i,
-main .upcomingMovies .moviesList .movie .info .timeAndRate .rate i {
+:is(.time, .rate) i {
   color: var(--yellow);
   font-size: 12px;
 }

@@ -66,8 +66,7 @@ img {
   @include prefix(transition, (color 0.3s, background-color 0.3s));
 }
 
-
-.button-effect:hover {
+.buttonEffect:hover {
   color: var(--black);
   background-color: var(--yellow);
 }

@@ -39,11 +39,11 @@ const Tools = () => {
         </nav>
       </div>
 
-      <button className={`${styles.signInButton} ${styles.buttonEffect}`}>
+      <button className={`${styles.signInButton} buttonEffect`} type="button">
         Sign in
       </button>
       <i
-        className="fa-solid fa-bars mobile-nav-icon"
+        className={`${styles.mobileNavIcon} fa-solid fa-bars`}
         onClick={() => {
           setIsOverlayActive(true);
           document.body.classList.add("overflow");

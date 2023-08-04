@@ -33,11 +33,11 @@ const UpcomingMovies = () => {
           </div>
         </div>
 
-        <ul className={styles.moviesList}>
+        <div className={styles.moviesList}>
           {movies.map(
             (movie, i) => i < 4 && <Movie movie={movie} key={movie.imdbID} />
           )}
-        </ul>
+        </div>
       </div>
     </section>
   );
